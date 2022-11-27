@@ -9,7 +9,7 @@
     z-index: 999;
     opacity: 1;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: scroll;
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
             0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -23,11 +23,13 @@
 
 .modal {
     position: absolute;
-    top: 50%;
+    top: 10px;
     left: 50%;
-    transform: scale(1) translate(-50%, -50%);
+    transform: scale(1) translate(-50%);
+    box-sizing: border-box;
     padding: 48px 24px;
-    width: 280px;
+    max-width: 280px;
+    width: 100%;
     background-color: $bcg-c-black;
     color: $c-white;
 
@@ -41,35 +43,91 @@
 
     font-weight: 700;
     font-size: 20px;
-    line-height: 28px;
-
+    line-height: 1.4;
     text-align: center;
 }
 
 .download {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    text-align: center;
+}
+
+.download__item {
 }
 
 .download__free {
     display: block;
-    margin: 0 auto;
+    padding: 28px 20px 88px 20px;
     background: $linear;
     color: $c-white;
     margin-bottom: 20px;
     border-radius: 6px;
+    text-align: center;
 }
 
 .download__border-wrap {
-    // box-sizing: border-box;
+    display: inline-block;
     background: $linear;
     padding: 2px;
     border-radius: 6px;
+    margin-bottom: 28px;
 }
 .download__pay {
     display: inline-block;
     background-color: $bcg-c-black;
     color: $c-white;
-    // border: ;
+    padding: 26px 18px;
+}
+
+.download__icon {
+    display: block;
+    width: 80px;
+    height: 106px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.download__title {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: $c-white;
+    margin-bottom: 20px;
+}
+.download__sub-list {
+
+}
+.download__sub-item {
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        box-sizing: border-box;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 9px solid $c-white;
+
+        position: absolute;
+        left: 0;
+        top: 4px;
+    }
+}
+
+.download__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7142;
+    color: $c-white;
+    &:first-child {
+        margin-bottom: 12px;
+    }
+}
+
+.modal__discription {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $c-white;
+    margin-bottom: 25px;
 }
