@@ -141,10 +141,21 @@ a {
   width: 100%;
   background-color: #06071B;
   color: #ffffff;
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-container.is-hidden .modal {
+.modal-backdrop.is-hidden .modal {
   -webkit-transform: scale(0.8) translate(-50%, -50%);
           transform: scale(0.8) translate(-50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: initial;
+    width: 568px;
+    padding: 32px 40px;
+  }
 }
 
 .modal__title {
@@ -154,9 +165,22 @@ a {
   line-height: 1.4;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .modal__title {
+    margin-bottom: 28px;
+  }
+}
 
 .download {
   display: block;
+}
+@media screen and (min-width: 768px) {
+  .download {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 22px;
+  }
 }
 
 .download__free {
@@ -249,6 +273,13 @@ a {
   color: #ffffff;
   border-radius: 6px;
 }
+@media screen and (min-width: 768px) {
+  .about-app {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
 .about-app__item {
   padding: 20px 22px 20px 20px;
@@ -265,6 +296,21 @@ a {
   position: absolute;
   top: -4px;
   left: 0;
+}
+@media screen and (min-width: 768px) {
+  .about-app__item:last-child::before {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    width: calc(100% - 4px);
+    left: -50%;
+    top: calc(50% - 2px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .about-app__item {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 }
 
 .about-app__sub-list {
@@ -335,6 +381,12 @@ a {
   color: #ffffff;
   border-radius: 5px;
   border-width: 0;
+}
+@media screen and (min-width: 768px) {
+  .modal__button {
+    width: 200px;
+    margin: 0 auto;
+  }
 }
 
 .modal__close-button {
