@@ -49,7 +49,6 @@
 
 .download {
     display: block;
-    text-align: center;
 }
 
 .download__item {
@@ -62,11 +61,14 @@
     color: $c-white;
     margin-bottom: 20px;
     border-radius: 6px;
+    border-width: 0;
     text-align: center;
 }
 
 .download__border-wrap {
     display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
     background: $linear;
     padding: 2px;
     border-radius: 6px;
@@ -74,6 +76,8 @@
 }
 .download__pay {
     display: inline-block;
+    border-width: 0;
+    border-radius: 6px;
     background-color: $bcg-c-black;
     color: $c-white;
     padding: 26px 18px;
@@ -119,6 +123,8 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.7142;
+    text-align: start;
+    padding-left: 18px;
     color: $c-white;
     &:first-child {
         margin-bottom: 12px;
@@ -130,4 +136,95 @@
     line-height: 1.5;
     color: $c-white;
     margin-bottom: 25px;
+}
+
+.about-app {
+    display: block;
+    background-color: $bcg-c-black;
+    color: $c-white;
+    border-radius: 6px;
+}
+
+.about-app__item {
+    padding: 20px 22px 20px 20px;
+
+    &:last-child {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: calc(100%);
+            height: 2px;
+            background: $linear;
+            position: absolute;
+            top: -4px;
+            left: 0;
+        }
+    }
+}
+
+.about-app__sub-list {
+    background-color: $bcg-c-black;
+}
+
+.about-app__sub-item {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   flex-wrap: wrap;
+   margin-bottom: 20px;
+
+   &:nth-child(4), &:nth-child(8) {
+    margin-bottom: 0;
+   }
+}
+
+.about-app__icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+.sub-wraper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+.about-app__accent-text {
+    color: #1AB9FD;
+}
+
+.modal__button {
+    display: block;
+    width: 100%;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: $linear;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: $c-white;
+
+    border-radius: 5px;
+    border-width: 0;
+}
+
+.modal__close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 0;
+    padding: 0;
+    background: transparent;
 }
